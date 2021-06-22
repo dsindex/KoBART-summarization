@@ -12,7 +12,7 @@ class KoBARTSummaryDataset(Dataset):
         super().__init__()
         self.tok = tok
         self.max_len = max_len
-        self.docs = pd.read_csv(file, sep='\t')
+        self.docs = pd.read_csv(file, sep='\t', error_bad_lines=False)
         self.len = self.docs.shape[0]
         self.pad_index = pad_index
         self.ignore_index = ignore_index
