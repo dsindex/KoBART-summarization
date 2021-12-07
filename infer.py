@@ -10,16 +10,16 @@ def load_model():
 
 model = load_model()
 tokenizer = get_kobart_tokenizer()
-st.title("KoBART 요약 Test")
-text = st.text_area("뉴스 입력:")
+st.title("요약 테스트(KoBART model, aihub finetuned")
+text = st.text_area("입력:")
 
-st.markdown("## 뉴스 원문")
+st.markdown("## 원문")
 st.write(text)
 
 if text:
     text = text.replace('\n', '')
-    st.markdown("## KoBART 요약 결과")
-    with st.spinner('processing..'):
+    st.markdown("## 요약문")
+    with st.spinner('처리중...'):
         input_ids = tokenizer.encode(text)
         input_ids = torch.tensor(input_ids)
         input_ids = input_ids.unsqueeze(0)
