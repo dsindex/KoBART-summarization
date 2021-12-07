@@ -10,8 +10,8 @@ def load_model():
 
 model = load_model()
 tokenizer = get_kobart_tokenizer()
-st.title("요약 테스트(KoBART model, aihub finetuned")
-text = st.text_area("입력:")
+st.title("요약 테스트(KoBART + AI hub)")
+text = st.text_area("입력 (실행: command+enter)")
 
 st.markdown("## 원문")
 st.write(text)
